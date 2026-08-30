@@ -23,5 +23,30 @@ print(s1.loc[["apple","Grapes","Pineapple"]])
 #Craeting Series from Dict
 
 pro={"apple":0.2,"Carraot":0.5,"Chicken":3,"Banana":0.6}
-s2=[pd.Series(pro,name="Krushna")]
+s2=pd.Series(pro,name="Krushna")
 print(s2)
+
+#Conditional Selection :-
+
+print(s2[s2>0.4])
+
+#logical Operators :- and , or , not
+
+print(s2[(s2>0.4) & (s2<1)]) # and 
+
+print(s2[(s2<0.5) | (s2==3)]) # or
+
+print(s2[~(s2>1)]) # not
+
+#Modifying Series
+
+s2["Carraot"]=2.2
+s2["mangoes"] = 3.6
+print(s2)
+
+#Removing Elements:-
+s_new=s2.drop("mangoes")
+print(s_new)
+
+s_new= s2.drop(["apple","mangoes"])
+print(s_new)
