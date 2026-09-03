@@ -13,8 +13,31 @@ data ={
 }
 
 df=pd.DataFrame(data)
-print(df,"\n")
+#print(df,"\n")
 
-print(df.head(1),"\n")
+#print(df.head(1),"\n")
 
-print(df.tail(1))
+print(df.tail(3))
+
+#loc and iloc :-
+
+#iloc() :-
+print(df.iloc[[1,3,2]])
+print(df.iloc[0:4])  # start (include) : stop (exclude) : step
+
+#loc() :-
+
+print(df.loc[1:3]) # start (include) : stop (include): step
+
+#note if we want specific rows and specific columns
+
+print(df.loc[0:3,["Department","Salary"]])
+
+print(df.iloc[1:3,:3])
+
+#Accesed Particular Column
+print(df["Department"])
+
+#Multiple Columns
+print(df[["Age","Name"]])
+
