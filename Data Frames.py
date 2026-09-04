@@ -41,3 +41,24 @@ print(df["Department"])
 #Multiple Columns
 print(df[["Age","Name"]])
 
+#Deletion
+
+#1. Column (axis=1):-
+
+temp=df.drop("Department",axis=1)
+df.drop("Department",axis=1) # Not change in orignal dataframe
+print(df)
+print(temp)
+df.drop("Department",axis=1,inplace=True) #Now Orignal Dataframe changes
+print(df)
+
+
+#2.Row(axis=0):-
+
+temp=df.drop(3,axis=0)
+print(temp)
+
+
+#Some Imp functions: 
+
+print(df.shape) #Indexes Column are not counted as column
