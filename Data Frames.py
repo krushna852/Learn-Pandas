@@ -62,3 +62,11 @@ print(temp)
 #Some Imp functions: 
 
 print(df.shape) #Indexes Column are not counted as column
+
+#Get information by .info()
+
+print(df.info())
+
+#Getting Statiscal Data From .describe()
+
+print(df.describe())
