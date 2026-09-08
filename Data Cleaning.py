@@ -3,10 +3,10 @@ import numpy as np
 
 
 data ={
-    "Name":["Krushna","Suraj","Mane","Garudkar",np.nan,"Aniket"],
-    "Age":[20,16,20,23,np.nan,18],
-    "Department":["Ml Engineer","Data Scientist","Data Scientist","Manager",np.nan,"Production Manager"],
-    "Salary":[7500000,5400000,6000000,5300000,np.nan,10000000]     
+    "Name":["Krushna","Suraj","Mane","Krushna",np.nan,"Aniket"],
+    "Age":[20,16,20,20,np.nan,18],
+    "Department":["Ml Engineer","Data Scientist","Data Scientist","Ml Engineer",np.nan,"Production Manager"],
+    "Salary":[7500000,5400000,6000000,7500000,np.nan,10000000]     
 }
 
 df=pd.DataFrame(data)
@@ -59,4 +59,29 @@ print(df.bfill()) #Fill missing values with last Known Value
 
 #Repalce any value
 
-print(df["Name"].replace("Mane","Krushna"))
+df["Name"]=df["Name"].replace("Mane","Shubham")
+
+
+print(df)
+
+#Dealing with Duplicates Value :- Only if all values in each column is repeated
+
+dup_df= df[df.duplicated()]
+print(dup_df)
+
+#Remark
+
+#Keep ="First"
+
+tem=df[df.duplicated(keep="first")]
+print(tem)#Returns the 2nd Duplicate Row 
+
+#keep ="Last"
+
+te=df[df.duplicated(keep="last")]
+print(te)  #Returns The first Value 
+
+#Droping Duplicated :
+
+df = df.drop_duplicates(keep="last")  #or Keep ="First"
+print(df)
