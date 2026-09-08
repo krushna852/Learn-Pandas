@@ -85,3 +85,17 @@ print(te)  #Returns The first Value
 
 df = df.drop_duplicates(keep="last")  #or Keep ="First"
 print(df)
+
+#Dealing with Invalid Values:
+
+#lambda Function
+
+df["Promoted Slaray"]=df["Promoted Slaray"].apply(lambda x:x/10 if x >= 7000000 else x )
+print(df["Promoted Slaray"])
+
+#String Problem
+
+df["Name"]=df["Name"].replace("Krushna","Krushna Walunjkar")
+
+df[["First name","Last Name"]] = df["Name"].str.split(" ",expand=True)
+print(df)
